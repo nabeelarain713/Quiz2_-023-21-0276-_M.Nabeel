@@ -39,17 +39,17 @@ function displayObject(obj, parentKey = "") {
     }
 }
 
-// let per_obj = {
-//     name: "Nabeel",
-//     age: 22,
-//     country: "Pakistan",
-//     semester: 5,
-//     cms: "023-21-0276",
-//     details: {
-//         contacts: ["0333-7642342","0315-6367321","0306-2373217"],
-//         emails: []
-//     }
-// }
+let per_obj = {
+    name: "Nabeel",
+    age: 22,
+    country: "Pakistan",
+    semester: 5,
+    cms: "023-21-0276",
+    details: {
+        contacts: ["0333-7642342","0315-6367321","0306-2373217"],
+        emails: []
+    }
+}
 
 
 
