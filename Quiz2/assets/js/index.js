@@ -24,32 +24,45 @@ myArray.map((value, index) => {
 
 // Task 3.  Write an object of person with key values as below and print the values of the object not keys
 
-function displayObject(obj, parentKey = "") {
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            const value = obj[key];
-            const currentKey = parentKey ? `${parentKey}.${key}` : key;
-
-            if (typeof value === 'object' && !Array.isArray(value)) {
-                displayObject(value, currentKey);
-            } else {
-                console.log(`${currentKey}: ${value}`);
-            }
-        }
-    }
-}
-
-let per_obj = {
-    name: "Nabeel",
-    age: 22,
-    country: "Pakistan",
-    semester: 5,
-    cms: "023-21-0276",
+const person = {
+    name: "John Doe",
+    age: 25,
+    country: "USA",
+    semester: "Fall 2023",
+    cms: "123456",
+  
     details: {
-        contacts: ["0333-7642342","0315-6367321","0306-2373217"],
-        emails: []
-    }
-}
+      contact1: {
+        contactNumber: "123-456-7890",
+        email: "john.doe@example.com",
+      },
+      contact2: {
+        contactNumber: "987-654-3210",
+        email: "johndoe@gmail.com",
+      },
+      contact3: {
+        contactNumber: "555-555-5555",
+        email: "johnd@example.net",
+      },
+    },
+  };
+  
+  // Print the values of the person object (excluding keys)
+  console.log(`Name: ${person.name}`);
+  console.log(`Age: ${person.age}`);
+  console.log(`Country: ${person.country}`);
+  console.log(`Semester: ${person.semester}`);
+  console.log(`CMS: ${person.cms}`);
+  
+  console.log(`Contact 1 Number: ${person.details.contact1.contactNumber}`);
+  console.log(`Contact 1 Email: ${person.details.contact1.email}`);
+  
+  console.log(`Contact 2 Number: ${person.details.contact2.contactNumber}`);
+  console.log(`Contact 2 Email: ${person.details.contact2.email}`);
+  
+  console.log(`Contact 3 Number: ${person.details.contact3.contactNumber}`);
+  console.log(`Contact 3 Email: ${person.details.contact3.email}`);
+  
 
 
 
