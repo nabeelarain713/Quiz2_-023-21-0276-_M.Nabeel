@@ -30,38 +30,36 @@ const person = {
     country: "USA",
     semester: "Fall 2023",
     cms: "123456",
-  
-    details: {
-      contact1: {
+    details: [
+      {
         contactNumber: "123-456-7890",
-        email: "john.doe@example.com",
+        email: "john.doe@example.com"
       },
-      contact2: {
+      {
         contactNumber: "987-654-3210",
-        email: "johndoe@gmail.com",
+        email: "johndoe@gmail.com"
       },
-      contact3: {
-        contactNumber: "555-555-5555",
-        email: "johnd@example.net",
-      },
-    },
+      {
+        contactNumber: "555-123-4567",
+        email: "johndoe@hotmail.com"
+      }
+    ]
   };
   
-  // Print the values of the person object (excluding keys)
-  console.log(`Name: ${person.name}`);
-  console.log(`Age: ${person.age}`);
-  console.log(`Country: ${person.country}`);
-  console.log(`Semester: ${person.semester}`);
-  console.log(`CMS: ${person.cms}`);
+  // Printing the values of the object (not keys)
+  for (const key in person) {
+    if (Array.isArray(person[key])) {
+      // If the value is an array (inner object)
+      for (const innerObj of person[key]) {
+        console.log(`Contact Number: ${innerObj.contactNumber}`);
+        console.log(`Email: ${innerObj.email}`);
+      }
+    } else {
+      // If the value is not an array (name, age, country, semester, cms)
+      console.log(person[key]);
+    }
+  }
   
-  console.log(`Contact 1 Number: ${person.details.contact1.contactNumber}`);
-  console.log(`Contact 1 Email: ${person.details.contact1.email}`);
-  
-  console.log(`Contact 2 Number: ${person.details.contact2.contactNumber}`);
-  console.log(`Contact 2 Email: ${person.details.contact2.email}`);
-  
-  console.log(`Contact 3 Number: ${person.details.contact3.contactNumber}`);
-  console.log(`Contact 3 Email: ${person.details.contact3.email}`);
   
 
 
